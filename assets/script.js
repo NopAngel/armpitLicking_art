@@ -15,8 +15,10 @@ function toggleAds()
     var x = document.getElementById("fake1");
     if (x.style.display === "none") {
         x.style.display = "";
+        localStorage.setItem("ads", "");
     } else {
         x.style.display = "none";
+        localStorage.setItem("ads", "none")
     }
     var x = document.getElementById("fake2");
     if (x.style.display === "none") {
@@ -24,4 +26,10 @@ function toggleAds()
     } else {
         x.style.display = "none";
     }
+}
+
+document.getElementById("fake1").style.display = localStorage.getItem("ads");
+document.getElementById("fake2").style.display = localStorage.getItem("ads");
+if (localStorage.getItem("ads") === "none") {
+    document.getElementById("toggleAdImg").setAttribute('src', "assets/widgets/enable_ads.gif");
 }
