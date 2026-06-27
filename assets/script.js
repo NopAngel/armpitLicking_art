@@ -12,13 +12,13 @@ function changeImage()
 
 function toggleAds()
 {
-    var x = document.getElementById("ad1");
+    var x = document.getElementById("fake1");
     if (x.style.display === "none") {
         x.style.display = "";
     } else {
         x.style.display = "none";
     }
-    var x = document.getElementById("ad2");
+    var x = document.getElementById("fake2");
     if (x.style.display === "none") {
         x.style.display = "";
     } else {
