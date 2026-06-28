@@ -41,9 +41,11 @@ function openImage(art)
     const thumbPath = art.getAttribute('src')
     const path = thumbPath.replace("-thumb","");
     console.log(path);
+    
     let temp = document.getElementsByTagName("template")[0];
     let clon = temp.content.cloneNode(true);
     document.body.appendChild(clon);
+
     document.getElementById("artpiece").setAttribute('src', path);
     
 }
