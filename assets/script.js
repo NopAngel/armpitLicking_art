@@ -41,13 +41,20 @@ function openImage(art)
     const thumbPath = art.getAttribute('src')
     const path = thumbPath.replace("-thumb","");
     console.log(path);
-    
+    //prepend png- to png thumbs
+    // if has png, replace jpg along with removing thumb
     let temp = document.getElementsByTagName("template")[0];
     let clon = temp.content.cloneNode(true);
     document.body.appendChild(clon);
-
+    
     document.getElementById("artpiece").setAttribute('src', path);
     
+}
+function closeArtViewer()
+{
+    
+    document.getElementById('artViewer').remove();
+
 }
 document.getElementById("fake1").style.display = localStorage.getItem("ads");
 document.getElementById("fake2").style.display = localStorage.getItem("ads");

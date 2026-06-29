@@ -60,10 +60,16 @@
         <div id="artViewer">
             <img src="" alt="" id="artpiece">
             <div id="artDescription"></div>
-            <div id="viewExit"></div>
+            <div id="viewExit" class="viewButton noise-texture" onclick="closeArtViewer()">
+                <img src="assets/widgets/window-close-solid.svg" alt="" class="viewButtonWidget" style="height: 50%;">
+            </div>
             <div id="viewButtonContainer">
-                <div id="viewLeft" class="viewButton"></div>
-                <div id="viewRight" class="viewButton"></div>
+                <div id="viewLeft" class="viewButton noise-texture">
+                    <img src="assets/widgets/angle-left-solid.svg" alt="" class="viewButtonWidget">
+                </div>
+                <div id="viewRight" class="viewButton noise-texture">
+                    <img src="assets/widgets/angle-right-solid.svg" alt="" class="viewButtonWidget">
+                </div>
             </div>
         </div>
     </template>
