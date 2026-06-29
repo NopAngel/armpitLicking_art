@@ -30,6 +30,6 @@ do
         filename=`basename -s .png $i`
         # Creates thumbnail and adds -thumb to end of new file
         # convert -thumbnail ${WIDTH}x $i "$filename-thumb.png"
-        magick convert -thumbnail ${WIDTH}x -quality 35% $i "$filename-thumb.jpg"
+        magick convert -thumbnail ${WIDTH}x -quality 35% $i "png-$filename-thumb.jpg"
     fi
 done

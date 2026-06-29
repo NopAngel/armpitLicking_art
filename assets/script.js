@@ -1,12 +1,28 @@
-const thumbList = document.getElementsByClassName("art");
-// const artList
 // const temp = document.getElementById("viewTemplate");
 // add nsfw art toggle
 
+const thumbList = document.getElementsByClassName("art");
+const artList = [];
 for (let i = 0; i < thumbList.length; i++) {
-    console.log(thumbList[i]);
+    const thumbPath = (thumbList[i].getAttribute('src'));
+    console.log(thumbPath);
+    
+    artList.push(thumbPath.replace("-thumb",""));
     
 }
+console.log(artList);
+
+function getArtPath(art)
+{
+    const thumbPath = (art.getAttribute('src'));
+    let path = thumbPath.replace("-thumb","");
+    if (path.includes("png-")) {
+        path = path.replace("png-","");
+        path = path.replace("jpg","png");
+    }
+    return path;
+}
+
 function changeImage()
 {
     var img = document.getElementById("toggleAdImg");
@@ -38,8 +54,7 @@ function toggleAds()
 
 function openImage(art)
 {
-    const thumbPath = art.getAttribute('src')
-    const path = thumbPath.replace("-thumb","");
+    const path = getArtPath(art)
     console.log(path);
     //prepend png- to png thumbs
     // if has png, replace jpg along with removing thumb
@@ -52,9 +67,7 @@ function openImage(art)
 }
 function closeArtViewer()
 {
-    
     document.getElementById('artViewer').remove();
-
 }
 document.getElementById("fake1").style.display = localStorage.getItem("ads");
 document.getElementById("fake2").style.display = localStorage.getItem("ads");
