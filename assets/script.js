@@ -3,7 +3,14 @@
 
 // roulette with screamer chance  
 
-//get rid of viewLeft or viewRight depending on index in list
+// get rid of viewLeft or viewRight depending on index in list
+
+// use template for ads (so they dont load or are removed completely if disabled)
+
+// find out how to convert to comppressed webps's with imagemagick and put in script
+
+// dynamically add art divs based on template(?) with js 
+
 let artIndex;
 const thumbList = document.getElementsByClassName("art");
 const artList = [];
