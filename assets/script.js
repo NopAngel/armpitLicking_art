@@ -1,7 +1,7 @@
 const thumbList = document.getElementsByClassName("art");
 // const artList
 // const temp = document.getElementById("viewTemplate");
-
+// add nsfw art toggle
 
 for (let i = 0; i < thumbList.length; i++) {
     console.log(thumbList[i]);
