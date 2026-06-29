@@ -36,7 +36,7 @@
 }
 #cs2 {
     height:45%;
-    background-image: url("widgets/cs2_fake.png");
+    background-image: url("widgets/cs2_fake.webp");
     background-size: cover;
     animation-name: animR;
     animation-duration: 10s;
@@ -44,7 +44,7 @@
 }
 #discord {
     height: 55%;
-    background-image: url("widgets/discord_fake.jpg");
+    background-image: url("widgets/discord_fake.webp");
     background-size: cover;
     animation-name: animR;
     animation-delay: 5s;
@@ -53,7 +53,7 @@
 }
 #osu {
     height:20%;
-    background-image: url("widgets/osu_fake.png");
+    background-image: url("widgets/osu_fake.webp");
     background-size: cover;
     /* background-position-x: 100%;
     animation-name: animR;
@@ -63,7 +63,7 @@
 }
 #iwantyou {
     height:30%;
-    background-image: url("widgets/iwantyou.jpg");
+    background-image: url("widgets/iwantyou.webp");
     background-size: cover;
     background-position-x: 100%;
     animation-name: animL;
@@ -73,7 +73,7 @@
 }
 #artFake {
     height:50%;
-    background-image: url("widgets/iwantyou.jpg");
+    background-image: url("widgets/iwantyou.webp");
     background-size: cover;
     /* background-position-x: 100%; */
     animation-name: animR;

@@ -6,7 +6,7 @@ body{
 }
 
 #bg {
-    background-image: url(bg.png);
+    background-image: url(bg.webp);
     filter: blur(2px) saturate(20%) brightness(60%) contrast(80%);
     transform:scale(1.05);
     overflow:clip;
