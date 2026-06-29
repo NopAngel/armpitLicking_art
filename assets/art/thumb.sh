@@ -15,7 +15,7 @@ do
         filename=`basename -s .jpg $i`
         # Creates thumbnail and adds -thumb to end of new file
         # convert -thumbnail ${WIDTH}x $i "$filename-thumb.png"
-        magick convert -thumbnail ${WIDTH}x -quality 35% $i "$filename-thumb.jpg"
+        cwebp $i -o "$filename-thumb.webp" -resize ${WIDTH} 0 -q 25 -z 9 -metadata 'none' -noalpha
     fi
 done
 # Loops through all png files in current folder
@@ -31,6 +31,6 @@ do
         filename=`basename -s .png $i`
         # Creates thumbnail and adds -thumb to end of new file
         # convert -thumbnail ${WIDTH}x $i "$filename-thumb.png"
-        magick convert -thumbnail ${WIDTH}x -quality 35% $i "png-$filename-thumb.jpg"
+        cwebp $i -o "png-$filename-thumb.webp" -resize ${WIDTH} 0 -q 25 -z 9
     fi
 done

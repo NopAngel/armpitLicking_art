@@ -15,9 +15,11 @@ let artIndex;
 const thumbList = document.getElementsByClassName("art");
 const artList = [];
 for (let i = 0; i < thumbList.length; i++) {
-    path = getArtPath(thumbList[i])
+    path = getArtPath(thumbList[i]);
     artList.push(path);
 }
+console.log(artList);
+
 
 function getArtPath(art)
 {
@@ -25,7 +27,10 @@ function getArtPath(art)
     let path = thumbPath.replace("-thumb","");
     if (path.includes("png-")) {
         path = path.replace("png-","");
-        path = path.replace("jpg","png");
+        path = path.replace("webp","png");
+    }
+    else {
+        path = path.replace("webp","jpg");
     }
     return path;
 }
@@ -82,7 +87,6 @@ function openImage(art)
     let temp = document.getElementsByTagName("template")[0];
     let clon = temp.content.cloneNode(true);
     document.body.appendChild(clon);
-
     document.getElementById("artpiece").setAttribute('src', path);
 
     for (let i = 0; i < artList.length; i++) {
