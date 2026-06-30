@@ -2,12 +2,13 @@ body, html{
     height:100%;
 }
 body{
-    background-color: #505050;
+    background-color: transparent;
 }
 
 
 
 #bg {
+    background-color: #505050;
     background-image: url(bg.webp);
     filter: blur(2px) saturate(20%) brightness(60%) contrast(80%);
     transform:scale(1.05);
