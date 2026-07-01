@@ -127,15 +127,52 @@ if (localStorage.getItem("ads") === "none") {
     document.getElementById("toggleAdImg").setAttribute('src', "assets/widgets/enable_ads.gif");
 }
 // ripped from so
-// let obj;
+// const obj;
 // async function foo() {
 
 //   const res = await fetch('assets/art/thumbnails.json')
 
-//   obj = await res.json();
+//   const obj = await res.json();
 // //   console.log(obj)
-//   return obj
+//   console.log(obj);
 // }
 
-// console.log(foo());
+// foo();
 
+function getThumbnails(url, callback){
+  var obj;
+  fetch(url)
+    .then(res => res.json())
+    .then(data => obj = data)
+    .then(() => callback(obj))
+ }
+
+getThumbnails('assets/art/thumbnails.json', createThumbnails);
+
+function createThumbnails(data){
+    var results = "";
+    data.forEach( (x) => {
+        console.log(x);
+    })
+}
+
+
+async function fetchData(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+}
+
+const citiesData = [];
+const url = 'assets/art/thumbnails.json';
+
+// Fetch data only once
+async function getData() {
+    const data = await fetchData(url);
+    citiesData.push(data);
+}
+
+getData();
+
+
+console.log(citiesData);
