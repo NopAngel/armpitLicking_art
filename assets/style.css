@@ -63,7 +63,7 @@ body{
     /* max-width:55%; */
     width: 1200px;
     min-width: 424px;
-    place-items:top;
+    /* place-items:top; */
     backdrop-filter: blur(10px) saturate(60%);
     overflow:clip;
 }

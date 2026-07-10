@@ -15,6 +15,12 @@
 
 // dynamically add art divs based on template(?) with js 
 
+document.getElementById("fake1").style.display = localStorage.getItem("ads");
+document.getElementById("fake2").style.display = localStorage.getItem("ads");
+if (localStorage.getItem("ads") === "none") {
+    document.getElementById("toggleAdImg").setAttribute('src', "assets/widgets/enable_ads.gif");
+}
+let artArr;
 let artIndex;
 const thumbList = document.getElementsByClassName("art");
 const artList = [];
@@ -50,7 +56,7 @@ function swapAdBlockWidget()
 }
 
 function toggleAds()
-{
+{   
     var x = document.getElementById("fake1");
     if (x.style.display === "none") {
         x.style.display = "";
@@ -121,58 +127,22 @@ function closeArtViewer()
 {
     document.getElementById('artViewer').remove();
 }
-document.getElementById("fake1").style.display = localStorage.getItem("ads");
-document.getElementById("fake2").style.display = localStorage.getItem("ads");
-if (localStorage.getItem("ads") === "none") {
-    document.getElementById("toggleAdImg").setAttribute('src', "assets/widgets/enable_ads.gif");
+function isThumb(s)
+{
+    return s.includes("-thumb");
 }
-// ripped from so
-// const obj;
-// async function foo() {
-
-//   const res = await fetch('assets/art/thumbnails.json')
-
-//   const obj = await res.json();
-// //   console.log(obj)
-//   console.log(obj);
-// }
-
-// foo();
-
-function getThumbnails(url, callback){
-  var obj;
-  fetch(url)
-    .then(res => res.json())
-    .then(data => obj = data)
-    .then(() => callback(obj))
- }
-
-getThumbnails('assets/art/thumbnails.json', createThumbnails);
-
-function createThumbnails(data){
-    var results = "";
-    data.forEach( (x) => {
-        console.log(x);
-    })
-}
-
-
-async function fetchData(url) {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-}
-
-const citiesData = [];
-const url = 'assets/art/thumbnails.json';
-
-// Fetch data only once
-async function getData() {
-    const data = await fetchData(url);
-    citiesData.push(data);
-}
-
-getData();
-
-
-console.log(citiesData);
+$(document).ready(function () {
+    function logFiles() {
+        $.getJSON("assets/art/", function (files) {
+            console.log(files[2]);
+            artArr = files;
+            let thumbArr = artArr.filter(isThumb);
+            console.log(thumbArr);
+            
+        }).fail(function () {
+            console.error("no art found");
+        });
+    }
+    logFiles();
+    console.log("ready");
+});
