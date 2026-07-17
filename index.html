@@ -11,6 +11,7 @@
 
 <body id="root">
     <div id="bg"></div> 
+
     <header id="headerContainer">
         <div id="header">
             <span>noelle's art</span>
@@ -18,62 +19,63 @@
             <div></div>
             <div></div>
             <div></div>
-            <img class="divider" src="assets/widgets/firedivider.gif">
+            <img class="divider" src="assets/widgets/firedivider.gif" alt="Fire Divider">
         </div>
     </header>
 
-
     <div id="fake1" class="realFake">
-        <a href="https://www.counter-strike.net/cs2" id="cs2" class="sideLink"></a>
-        <a href="https://discord.com/users/1131423380923494460" id="discord" class="sideLink"></a>
+        <a href="https://www.counter-strike.net/cs2" id="cs2" class="sideLink" aria-label="Counter Strike 2"></a>
+        <a href="https://discord.com/users/1131423380923494460" id="discord" class="sideLink" aria-label="Discord Profile"></a>
     </div>
+    
     <div id="fake2Container">
         <div id="fake2" class="realFake">
-            <a href="https://osu.ppy.sh/home/download" id="osu" class="sideLink"></a>
-            <a href="https://osu.ppy.sh/teams/21507" id="iwantyou" class="sideLink"></a>
-            <a href="https://osu.ppy.sh/teams/21507" id="artFake" class="sideLink"></a> <!-- maybe replace with latest youtube or artpiece IDFK -->
+            <a href="https://osu.ppy.sh/home/download" id="osu" class="sideLink" aria-label="Download osu!"></a>
+            <a href="https://osu.ppy.sh/teams/21507" id="iwantyou" class="sideLink" aria-label="osu! Team I Want You"></a>
+            <a href="https://osu.ppy.sh/teams/21507" id="artFake" class="sideLink" aria-label="Latest Update"></a>
         </div>
     </div>
-
-    <div id="contentContainer">
+    
+    <main id="contentContainer">
         <div id="main">
             <div class="noise-texture"></div>
+            
             <div class="artContainer">
-                <img class="art"src="assets/art/png-kochiya_cute-thumb.webp" onclick="openImage(this)"/>
+                <img class="art" src="assets/art/png-kochiya_cute-thumb.webp" onclick="openImage(this)" alt="Kochiya Cute Artwork">
             </div>
             <div class="artContainer">
-                <img class="art"src="assets/art/mona_birthday-thumb.webp" onclick="openImage(this)"/>
+                <img class="art" src="assets/art/mona_birthday-thumb.webp" onclick="openImage(this)" alt="Mona Birthday Artwork">
             </div>
             <div class="artContainer">
-                <img class="art"src="assets/art/okiri_dokiri-thumb.webp" onclick="openImage(this)"/>
+                <img class="art" src="assets/art/okiri_dokiri-thumb.webp" onclick="openImage(this)" alt="Okiri Dokiri Artwork">
             </div>
         </div>
-    </div>
-    <!-- footer with  sources, such as https://pixeliconlibrary.com/ -->
+    </main>
+
     <button id="toggleAd" onclick="swapAdBlockWidget();toggleAds();">
-        <img src="assets/widgets/disable_ads.gif" id="toggleAdImg">
+        <img src="assets/widgets/disable_ads.gif" id="toggleAdImg" alt="Toggle Ads">
     </button>
 
     <template id="viewTemplate">
         <div id="artViewer">
-            <img src="" alt="" id="artpiece">
+            <img src="" alt="Full size artwork" id="artpiece">
             <div id="artDescription"></div>
             <div id="viewExit" class="viewButton noise-texture" onclick="closeArtViewer()">
-                <img src="assets/widgets/window-close-solid.svg" alt="" class="viewButtonWidget" style="height: 50%;">
+                <img src="assets/widgets/window-close-solid.svg" alt="Close" class="viewButtonWidget" style="height: 50%;">
             </div>
             <div id="viewButtonContainer">
                 <div id="viewLeft" class="viewButton noise-texture" onclick="changeArtImage(1)">
-                    <img src="assets/widgets/angle-left-solid.svg" alt="" class="viewButtonWidget">
+                    <img src="assets/widgets/angle-left-solid.svg" alt="Previous" class="viewButtonWidget">
                 </div>
                 <div id="viewRight" class="viewButton noise-texture" onclick="changeArtImage(2)">
-                    <img src="assets/widgets/angle-right-solid.svg" alt="" class="viewButtonWidget">
+                    <img src="assets/widgets/angle-right-solid.svg" alt="Next" class="viewButtonWidget">
                 </div>
             </div>
         </div>
     </template>
 
     <svg width="0" height="0" style="position: absolute;">
-        <filter id="noise-texture">
+        <filter id="noise-texture-filter">
             <feTurbulence 
                 type="fractalNoise" 
                 baseFrequency="0.65"
@@ -87,22 +89,12 @@
             <feBlend mode="multiply" in="SourceGraphic"/>
         </filter>
     </svg>
+
     <footer>
-        <script type="text/javascript" src="assets/jquery.js"></script>
-        <script src="assets/script.js" ></script>
+        <p>Icons from <a href="https://pixeliconlibrary.com/">Pixel Icon Library</a></p>
     </footer>
-    <!-- <script type="module">
-        // // A function to get data from a URL
-        // async function getData(url) {
-        //     const x = await fetch(url)  // We wait for the data to arrive
-        //     return await x.json()  // We wait for the data to convert to JSON
-        // }
 
-        // // We wait for the data to arrive
-        // const data = await getData("assets/art/thumbnails.json")
-
-        // // We log/print the arrived JSON data
-        // console.log(data)
-    </script> -->
+    <script type="text/javascript" src="assets/jquery.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 </html>
